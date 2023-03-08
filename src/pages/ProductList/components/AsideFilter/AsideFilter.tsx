@@ -2,6 +2,7 @@ import classNames from 'classnames'
 import { Controller, useForm } from 'react-hook-form'
 import { createSearchParams, Link, useNavigate } from 'react-router-dom'
 import { yupResolver } from '@hookform/resolvers/yup'
+import { useTranslation } from 'react-i18next'
 import { omit } from 'lodash'
 
 import InputNumber from 'src/components/InputNumber'
@@ -30,6 +31,7 @@ type FormData = NoUndefinedField<Pick<Schema, 'price_max' | 'price_min'>>
 const priceSchema = schema.pick(['price_min', 'price_max'])
 
 export default function AsideFilter({ queryConfig, categories }: Props) {
+  const { t } = useTranslation(['home'])
   const { category } = queryConfig
   const navigate = useNavigate()
   const {
@@ -88,7 +90,7 @@ export default function AsideFilter({ queryConfig, categories }: Props) {
             </g>
           </g>
         </svg>
-        Tất cả danh mục
+        {t('aside filter.all categories')}
       </Link>
       <div className='my-4 h-[1px] bg-gray-300' />
       <ul>
@@ -141,7 +143,7 @@ export default function AsideFilter({ queryConfig, categories }: Props) {
             />
           </g>
         </svg>
-        Bộ lọc tìm kiếm
+        {t('home:aside filter.filter search')}
       </Link>
       <div className='my-4 h-[1px] bg-gray-300' />
       <div className='my-5'>

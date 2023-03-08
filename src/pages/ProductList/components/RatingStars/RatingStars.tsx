@@ -1,6 +1,6 @@
 import { createSearchParams, useNavigate } from 'react-router-dom'
 import path from 'src/constants/path'
-import { QueryConfig } from '../../ProductList'
+import { QueryConfig } from 'src/hooks/useQueryConfig'
 /**
  * index 0: có 5 cái màu vàng tương ứng từ indexStar 0 - 4 đều màu vàng
  * index 1: có 4 cái màu vàng tương ứng từ indexStar 0 - 3 đều màu vàng

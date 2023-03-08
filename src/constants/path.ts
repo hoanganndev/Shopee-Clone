@@ -1,6 +1,9 @@
 const path = {
   home: '/',
-  profile: '/profile',
+  user: '/user',
+  profile: '/user/profile',
+  changePassword: '/user/password',
+  historyPurchase: '/user/historyPurchase',
   register: '/register',
   login: '/login',
   logout: '/logout',

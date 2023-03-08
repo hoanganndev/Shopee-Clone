@@ -2,6 +2,7 @@ import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import DOMPurify from 'dompurify'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 import productApi from 'src/apis/product.api'
 import ProductRating from 'src/components/ProductRating'
@@ -22,13 +23,16 @@ import {
 import path from 'src/constants/path'
 
 export default function ProductDetail() {
+  const { t } = useTranslation(['product'])
   const queryClient = useQueryClient()
   const navigate = useNavigate()
   const [buyCount, setBuyCount] = useState(1)
-  const { nameId } = useParams()
+  const { nameId, checkErrorBoundary } = useParams()
   const id = getIdFromNameId(nameId as string)
   const [currentIndexImage, setCurrentIndexImage] = useState([0, 5])
   const [activeImage, setActiveImage] = useState('')
+
+  // const isErrorBoundary = checkErrorBoundary.value
 
   const { data: productDetailData } = useQuery({
     queryKey: ['product', id],
@@ -276,7 +280,9 @@ export default function ProductDetail() {
                   value={buyCount}
                   max={product.quantity}
                 />
-                <div className='ml-6 text-sm text-gray-500'>{product.quantity} sản phẩm có sẵn</div>
+                <div className='ml-6 text-sm text-gray-500'>
+                  {product.quantity} {t('product:avaiable')}
+                </div>
               </div>
               <div className='mt-8 flex items-center'>
                 <button
