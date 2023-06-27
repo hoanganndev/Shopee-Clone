@@ -17,6 +17,7 @@ const loginSchema = schema.pick(['email', 'password'])
 const Login = () => {
   const { setIsAuthenticated, setProfile } = useContext(AppContext)
   const navigate = useNavigate()
+
   const {
     register,
     setError,
@@ -25,6 +26,7 @@ const Login = () => {
   } = useForm<FormData>({
     resolver: yupResolver(loginSchema)
   })
+
   const loginMutation = useMutation({
     mutationFn: (body: FormData) => authApi.login(body)
   })
@@ -52,6 +54,7 @@ const Login = () => {
       }
     })
   })
+  console.log('=====> errors: ', errors)
   return (
     <div className='bg-orange'>
       <div className='container'>
@@ -79,6 +82,7 @@ const Login = () => {
                 errorMessage={errors.password?.message}
                 placeholder='Password'
               />
+
               <div className='mt-3'>
                 <Button
                   disabled={loginMutation.isLoading}

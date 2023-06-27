@@ -7,15 +7,6 @@ import RegisterLayout from './layouts/RegisterLayout'
 import CartLayout from './layouts/CartLayout'
 import UserLayout from './pages/User/Layouts/UserLayout'
 import path from 'src/constants/path'
-// import Login from './pages/Login'
-// import ProductList from './pages/ProductList'
-// import Register from './pages/Register'
-// import ProductDetail from './pages/ProductDetail'
-// import Cart from './pages/Cart'
-// import ChangePassword from './pages/User/Pages/ChangePassword'
-// import Profile from './pages/User/Pages/Profile'
-// import HistoryPurchase from './pages/User/Pages/HistoryPurchase'
-// import NotFound from './pages/NotFound'
 
 function ProtectedRoute() {
   const { isAuthenticated } = useContext(AppContext)

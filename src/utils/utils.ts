@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import axios, { AxiosError } from 'axios'
 
 import config from 'src/constants/config'

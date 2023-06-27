@@ -1,3 +1,6 @@
 [*]
-indent_size = 2
 indent_style = space
+indent_size = 2
+
+
+# mục đích file này nhằm chia sẻ config giữa các edittor khác nhau vs code, webstorm ...

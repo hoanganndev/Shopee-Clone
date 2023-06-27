@@ -18,7 +18,7 @@ const Input = ({
   classNameEye = 'absolute top-[8px] right-[5px] h-6 w-6',
   name,
   register,
-  rules,
+  rules, // rules is a object to validate default of react-hook-form without yub validation
   type,
   ...rest
 }: Props) => {
